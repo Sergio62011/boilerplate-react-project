@@ -1,0 +1,41 @@
+@layer componentes {
+  .noticia-card {
+    display: grid;
+    grid-row: span 5;
+    grid-template-rows: subgrid;
+    row-gap: var(--espacio-2);
+    padding: var(--espacio-3);
+    background: var(--color-superficie);
+    border-radius: var(--radio-card);
+
+    & .noticia-card__imagen {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 0.5rem;
+      background: var(--color-fondo);
+    }
+    & .noticia-card__titulo {
+      margin: 0;
+      font-size: var(--texto-medio);
+      line-height: 1.25;
+    }
+    & .noticia-card__resumen {
+      margin: 0;
+      color: var(--color-texto-suave);
+      overflow-wrap: anywhere;
+    }
+    & .noticia-card__meta {
+      margin: 0;
+      font-size: var(--texto-pequeno);
+    }
+    & .noticia-card__enlace {
+      color: var(--color-acento);
+      font-weight: 700;
+    }
+    &:has(.noticia-card__enlace:focus-visible) {
+      outline: 3px solid var(--color-acento);
+      outline-offset: 4px;
+    }
+  }
+}
